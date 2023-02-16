@@ -16,8 +16,9 @@ namespace BethanysPieShop.Controllers
             _pieRepository = pieRepository;
         }
 
-        public IActionResult List()
+        public IActionResult List()                 // framework will look for view called List inside of the Pie folder
         {
+            ViewBag.CurrentCategory = "Cheese cakes";
             return View(_pieRepository.AllPies);
         }
     }
