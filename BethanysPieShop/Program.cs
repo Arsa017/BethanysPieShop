@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.MapDefaultControllerRoute();
+app.MapDefaultControllerRoute();    // middleware that pointing the request to the actual action on the controller
 DbInitializer.Seed(app);
 
 app.Run();
