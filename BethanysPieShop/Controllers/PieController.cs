@@ -23,7 +23,7 @@ namespace BethanysPieShop.Controllers
             //return View(_pieRepository.AllPies);
 
             PieListViewModel piesListViewModel = new PieListViewModel(
-                _pieRepository.AllPies, "Cheese cakes");
+                _pieRepository.AllPies, "All pies");
 
             return View(piesListViewModel);
         }
