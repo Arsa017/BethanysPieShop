@@ -13,10 +13,11 @@ namespace BethanysPieShop.Controllers
             _pieRepository = pieRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            HomeViewModel homeViewModel = new HomeViewModel(
-                _pieRepository.PiesOfTheWeek);
+            var piesOfTheWeek = _pieRepository.PiesOfTheWeek;
+
+            var homeViewModel = new HomeViewModel(piesOfTheWeek);
 
             return View(homeViewModel);
         }

@@ -2,7 +2,7 @@
 {
     public static class DbInitializer
     {
-        public static void Seed(IApplicationBuilder applicationBuilder)     // to get DbContext from the application builder; can't use dependency injection
+        public static void Seed(IApplicationBuilder applicationBuilder)
         {
             BethanysPieShopDbContext context = applicationBuilder.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BethanysPieShopDbContext>();
 

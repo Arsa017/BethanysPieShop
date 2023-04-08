@@ -9,15 +9,13 @@ namespace BethanysPieShop.Controllers
         private readonly IPieRepository _pieRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        public PieController(
-            IPieRepository pieRepository,
-            ICategoryRepository categoryRepository)
+        public PieController(IPieRepository pieRepository, ICategoryRepository categoryRepository)
         {
-            _categoryRepository = categoryRepository;
             _pieRepository = pieRepository;
+            _categoryRepository = categoryRepository;
         }
 
-        //public IActionResult List()
+               //public IActionResult List()
         //{
         //    //ViewBag.CurrentCategory = "Cheese cakes";
 
@@ -51,12 +49,9 @@ namespace BethanysPieShop.Controllers
         {
             var pie = _pieRepository.GetPieById(id);
             if (pie == null)
-            {
                 return NotFound();
-            }
 
             return View(pie);
         }
-
     }
 }

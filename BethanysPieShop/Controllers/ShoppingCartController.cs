@@ -9,15 +9,12 @@ namespace BethanysPieShop.Controllers
         private readonly IPieRepository _pieRepository;
         private readonly IShoppingCart _shoppingCart;
 
-        public ShoppingCartController(
-            IPieRepository pieRepository,
-            IShoppingCart shoppingCart)
+        public ShoppingCartController(IPieRepository pieRepository, IShoppingCart shoppingCart)
         {
             _pieRepository = pieRepository;
             _shoppingCart = shoppingCart;
+
         }
-
-
         public ViewResult Index()
         {
             var items = _shoppingCart.GetShoppingCartItems();
@@ -47,8 +44,7 @@ namespace BethanysPieShop.Controllers
             {
                 _shoppingCart.RemoveFromCart(selectedPie);
             }
-            return RedirectToAction("Index");   // on the invoke on these methods they will redirect us back to the Index view of the ShoppingCart
+            return RedirectToAction("Index");
         }
-
     }
 }
